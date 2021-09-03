@@ -12,7 +12,7 @@ mkdir -p $MY_INSTALL_DIR
 export PATH="$MY_INSTALL_DIR/bin:$PATH"    
     
 # 3 Download gRPC
-# git clone --recurse-submodules -b v1.38.0 https://github.com/grpc/grpc    
+git clone --recurse-submodules -b v1.38.0 https://github.com/grpc/grpc    
     
 # 4 Build gRPC
 cd grpc    
@@ -20,6 +20,7 @@ mkdir -p cmake/build
 pushd cmake/build    
 cmake -DgRPC_INSTALL=ON \    
       -DBUILD_SHARED_LIBS=ON \    
+      -DCMAKE_BUILD_TYPE=Release \    
       -DCMAKE_INSTALL_PREFIX=$MY_INSTALL_DIR \    
       ../..    
 make -j4    
