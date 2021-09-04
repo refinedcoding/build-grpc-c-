@@ -6,7 +6,7 @@ mkdir -p $MY_INSTALL_DIR
 export PATH="$MY_INSTALL_DIR/bin:$PATH"
 
 echo Step 3 Download gRPC
-# git clone --recurse-submodules -b v1.38.0 https://github.com/grpc/grpc
+git clone --recurse-submodules -b v1.38.0 https://github.com/grpc/grpc
 
 echo Step 4 Build gRPC
 cd grpc
