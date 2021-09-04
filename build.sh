@@ -1,10 +1,10 @@
-# 2 Environment
+echo Step 2 Environment
 export MY_INSTALL_DIR=$HOME/.local    
 mkdir -p $MY_INSTALL_DIR    
 export PATH="$MY_INSTALL_DIR/bin:$PATH"    
     
-# 3 Download gRPC
-git clone --recurse-submodules -b v1.38.0 https://github.com/grpc/grpc    
+echo Step 3 Download gRPC
+# git clone --recurse-submodules -b v1.38.0 https://github.com/grpc/grpc    
     
 # 4 Build gRPC
 cd grpc    
@@ -29,7 +29,7 @@ make
 make install    
 popd    
     
-# 5 Build Example
+echo Step 5 Build Example
 cd examples/cpp/helloworld    
 mkdir -p cmake/build    
 pushd cmake/build    
