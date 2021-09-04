@@ -1,3 +1,5 @@
+echo Step 1 Build gRPC
+
 echo Step 2 Environment
 export MY_INSTALL_DIR=$HOME/.local
 mkdir -p $MY_INSTALL_DIR
@@ -30,6 +32,7 @@ make install
 popd
 
 echo Step 5 Build Example
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$MY_INSTALL_DIR/lib:$MY_INSTALL_DIR/lib64
 cd examples/cpp/helloworld
 mkdir -p cmake/build
 pushd cmake/build
